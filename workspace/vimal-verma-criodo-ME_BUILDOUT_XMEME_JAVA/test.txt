@@ -1,0 +1,19 @@
+============================= test session starts ==============================
+platform linux -- Python 3.6.9, pytest-6.2.2, py-1.10.0, pluggy-0.13.1
+rootdir: /home/crio-user/workspace/vimal-verma-criodo-ME_BUILDOUT_XMEME_JAVA
+plugins: order-0.10.0, pspec-0.0.4
+collected 8 items
+
+assessment/main.py                                                                                 
+X Meme Assessment
+[92m ✓ When run with empty database, get calls should return success, and response should be empty[0m
+[92m ✓ Post first MEME and verify that it returns id in the response[0m
+[92m ✓ Post a new MEME, capture its Id, and verify its GET /meme/{id} returns correct MEME[0m
+[92m ✓ Try to access MEME with some random id, and verify that it returns 404[0m
+[92m ✓ Verify that posting duplicate MEME return 409[0m
+[92m ✓ Verify that API doesnt accept empty data in POST call[0m
+[92m ✓ Insert 50 MEMEs and try accessing them to confirm that all of them are returned back[0m
+[92m ✓ Post more than 100 MEME, make a GET call and ensure that it returns only latest 100 MEME[0m
+                                                                         [100%]
+
+======================== 8 passed, 8 warnings in 2.03s =========================
