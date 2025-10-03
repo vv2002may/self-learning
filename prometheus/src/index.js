@@ -1,13 +1,17 @@
 import express from "express";
-import { requestCountMiddleware } from "./monitoring/requestCountMiddleware";
 import client from "prom-client";
+import { requestCountMiddleware } from "./monitoring/requestCountMiddleware";
 import { requestGaugeMiddleware } from "./monitoring/requestGaugeMiddleware";
+import { requestHistogramMiddleware } from "./monitoring/requestHistogramMiddleware";
+
 
 const app = express();
 
 // app.use(requestCountMiddleware);
 
-app.use(requestGaugeMiddleware);
+// app.use(requestGaugeMiddleware);
+
+app.use(requestHistogramMiddleware);
 
 app.get("/user", (req, res) => {
     res.json({
